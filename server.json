@@ -1,0 +1,79 @@
+{
+  "questions": [
+    {
+      "id": "123",
+      "title": "Qual é o melhor jogador de futebol de todos os tempos",
+      "text": "Fiquei com essa dúvida essa semana, gostaria de saber a opnião de vocês.Qual é o melhor jogador de futebol de todos os tempos",
+      "user": "Ronaldo_22",
+      "subject": "Sports",
+      "likes": 5,
+      "createdAt": "2020-01-01 12:00:00",
+      "updateAt": "2020-01-01 12:00:00",
+      "answer": [
+        {
+          "id": "123",
+          "text": "Eu acho que foi o Messi",
+          "user": "cara22",
+          "question_id": "123"
+        },
+        {
+          "id": "123",
+          "text": "Eu acho que foi o Messi",
+          "user": "cara22",
+          "question_id": "123"
+        },
+        {
+          "id": "123",
+          "text": "Eu acho que foi o Messi",
+          "user": "cara22",
+          "question_id": "123"
+        },
+        {
+          "id": "123",
+          "text": "Eu acho que foi o Messi",
+          "user": "cara22",
+          "question_id": "123"
+        }
+      ]
+    },
+    {
+      "id": "1234",
+      "title": "Qual o melhor filme de 2020",
+      "text": "O que vocês acham galera.Qual o melhor filme de 2020",
+      "user": "jujuba32",
+      "subject": "Entertainment",
+      "likes": 2,
+      "createdAt": "2020-02-02 12:00:00",
+      "updateAt": "2020-02-02 12:00:00",
+      "answer": [
+        {
+          "id": "1234",
+          "text": "Eu acho que foi o Star Wars",
+          "user": "fulano34",
+          "question_id": "1234"
+        },
+        {
+          "id": "1234",
+          "text": "Eu acho que foi o Star Wars",
+          "user": "fulano34",
+          "question_id": "1234"
+        },      {
+          "id": "1234",
+          "text": "Eu acho que foi o Star Wars",
+          "user": "fulano34",
+          "question_id": "1234"
+        },      {
+          "id": "1234",
+          "text": "Eu acho que foi o Star Wars",
+          "user": "fulano34",
+          "question_id": "1234"
+        },      {
+          "id": "1234",
+          "text": "Eu acho que foi o Star Wars",
+          "user": "fulano34",
+          "question_id": "1234"
+        }
+      ]
+    }
+  ]
+}
