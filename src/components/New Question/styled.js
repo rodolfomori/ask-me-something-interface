@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
     text-align: center;
   }
   justify-content: space-between;
-
   flex-direction: column;
 `
 
