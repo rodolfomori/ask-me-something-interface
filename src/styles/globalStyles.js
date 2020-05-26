@@ -16,6 +16,7 @@ color: inherit;
 
 body, input, button,p{
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 16px;
 }
 

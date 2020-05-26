@@ -6,6 +6,7 @@ export const Container = styled.div`
   height: 327px;
   border-radius: 20px;
   margin: 50px;
+  margin-left: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
   display: flex;
   margin-right: 0;
@@ -26,4 +27,9 @@ export const Logo = styled.img`
   border-radius: 20px;
   background: #8f9ca9;
   max-height: 307px;
+`
+
+export const LogoText = styled.img`
+  height: 300px;
+  margin-left: 15px;
 `

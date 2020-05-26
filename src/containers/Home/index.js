@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react'
 import { Header, Sidebar, NewQuestion } from '../../components'
 import api from '../../services/api'
 import ModalAnswer from '../Modal Answer'
+import ModalQuestion from '../Modal Question'
 import { Container, ContainerHeader, AllQuestions, ContainerQuestions } from './styled'
 
 function Home() {
   const [questions, setQuestions] = useState(null)
   const [openModalAnswer, setOpenModalAnswer] = useState(false)
+  const [openModalQuestion, setOpenModalQuestion] = useState(false)
   const [modalQuestion, setModalQuestion] = useState({})
 
   useEffect(() => {
@@ -28,8 +30,20 @@ function Home() {
           }}
         />
       )}
+      {openModalQuestion && (
+        <ModalQuestion
+          closeModal={(close) => {
+            setOpenModalQuestion(close)
+          }}
+        />
+      )}
       <ContainerHeader>
         <Header />
+        <NewQuestion
+          openModal={() => {
+            setOpenModalQuestion(true)
+          }}
+        />
         <Sidebar />
       </ContainerHeader>
       <ContainerQuestions>

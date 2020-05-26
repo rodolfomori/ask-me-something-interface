@@ -17,7 +17,7 @@ export const BackBlur = styled.div`
   z-index: 98;
 `
 
-export const AnswersComponent = styled.div`
+export const QuestionComponent = styled.div`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
   overflow: auto;
   width: 70vw;

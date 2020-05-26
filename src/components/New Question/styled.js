@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   padding: 10px;
   background: white;
-  height: 200px;
+  height: 327px;
+  width: 200px;
   border-radius: 20px;
   margin: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
@@ -26,14 +27,17 @@ export const Button = styled.button`
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  background-color: #ecf0f3;
+  background-color: white;
   border: none;
   display: flex;
   justify-content: center;
+`
 
-  svg {
-    height: 35px;
-    width: 35px;
-    color: #2eb263;
-  }
+export const Logo = styled.img`
+  width: 100%;
+`
+
+export const MoreIcon = styled.img`
+  width: 100%;
+  color: #5374ff;
 `

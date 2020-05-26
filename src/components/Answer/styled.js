@@ -6,7 +6,7 @@ export const Container = styled.div`
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.145733);
   border-radius: 10px;
   margin: 20px 0;
-  background-color: #f2f5f8;
+  background-color: white;
 `
 
 export const Wrapper = styled.div`
@@ -16,9 +16,9 @@ export const Wrapper = styled.div`
 
 export const Avatar = styled.img`
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-right: 30px;
+  height: 25px;
+  width: 25px;
+  margin-right: 20px;
 `
 
 export const AnswerText = styled.div``

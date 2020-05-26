@@ -1,19 +1,29 @@
 import React from 'react'
-import { FaPlus } from 'react-icons/fa'
 
-import { Container, Button, Wrapper } from './styled'
+import PropTypes from 'prop-types'
 
-function NewQuestion() {
+import askme from '../../assets/img/askmemore.png'
+import more from '../../assets/img/moreicon.png'
+import { Container, Button, Wrapper, Logo, MoreIcon } from './styled'
+
+function NewQuestion({ openModal }) {
+  const setModalOpen = () => {
+    openModal && openModal()
+  }
   return (
     <Container>
       <Wrapper>
-        <Button>
-          <FaPlus />
+        <Logo src={askme} />
+        <Button onClick={setModalOpen}>
+          <MoreIcon src={more} />
         </Button>
-        <p>Ask me Something!</p>
       </Wrapper>
     </Container>
   )
+}
+
+NewQuestion.propTypes = {
+  openModal: PropTypes.func,
 }
 
 export default NewQuestion
