@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaReply } from 'react-icons/fa'
 import { RiArrowGoBackLine } from 'react-icons/ri'
+import { toast } from 'react-toastify'
 
 import PropTypes from 'prop-types'
 
@@ -21,6 +22,13 @@ import {
 
 function ModalAnswer({ closeModal, question: quest }) {
   const [question, setQuestion] = useState(quest)
+
+  const sendAnswer = () => {
+    toast.success('Thank you for your answer')
+    setTimeout(() => {
+      setModalClose()
+    }, 3000)
+  }
 
   console.log(question)
   const setModalClose = () => {
@@ -49,7 +57,7 @@ function ModalAnswer({ closeModal, question: quest }) {
           <h3>{question.answer ? question.answer.length + ' Answers' : '0 Answer'}</h3>
         </WrapperBottom>
         <MyAnswerContainer>
-          <MyAnswer placeholder="Answer Me Please!" />
+          <MyAnswer placeholder="Answer Me Please!" onClick={sendAnswer} />
           <SendButton>
             Answer!
             <FaReply />
