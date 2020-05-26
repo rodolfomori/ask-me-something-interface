@@ -1,22 +1,26 @@
 import React from 'react'
 
+import { parseISO, format } from 'date-fns'
+import PropTypes from 'prop-types'
+
 import { Container, Wrapper, Avatar, AnswerText, Like, Date } from './styled'
 
-function Answer() {
-  const id = 123123
+function Answer({ answer }) {
+  console.log(answer)
   return (
     <Container>
       <Wrapper>
-        <Avatar src={`https://api.adorable.io/avatars/81/${id}.png`} />
-        <AnswerText>
-          asdas asd asd asd asd asd asd as asdasd asdasdasdas das ads das asd asd asda s asdasd asdasdasdasdas asdasdasd
-          asd asd asd asd asd a asd asd asdasdasd asdasd asd asda sd ad asda sd
-        </AnswerText>
-        <Like></Like>
+        <Avatar src={`https://api.adorable.io/avatars/81/${answer.id}.png`} />
+        <AnswerText>{answer.text}</AnswerText>
+        {/* <Like></Like> */}
       </Wrapper>
-      <Date>25 de Janeiro de 2020</Date>
+      <Date>{format(parseISO(answer.createdAt), "EEEE dd MMM yyyy H':'mm")}</Date>
     </Container>
   )
+}
+
+Answer.propTypes = {
+  answer: PropTypes.object,
 }
 
 export default Answer

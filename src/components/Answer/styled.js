@@ -3,8 +3,10 @@ import { FaHeart } from 'react-icons/fa'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  border: 1px solid;
-  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.145733);
+  border-radius: 10px;
+  margin: 20px 0;
+  background-color: #f2f5f8;
 `
 
 export const Wrapper = styled.div`
@@ -29,4 +31,7 @@ export const Like = styled(FaHeart)`
 
 export const Date = styled.p`
   margin-left: 15px;
+  margin-bottom: 5px;
+  font-weight: 200;
+  font-size: 15px;
 `

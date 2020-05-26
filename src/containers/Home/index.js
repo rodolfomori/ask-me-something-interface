@@ -7,11 +7,8 @@ import { Container, ContainerHeader, AllQuestions, ContainerQuestions } from './
 
 function Home() {
   const [questions, setQuestions] = useState(null)
-  const [openModalAnswer, setOpenModalAnswer] = useState(true)
-
-  const openAnswer = () => {
-    setOpenModalAnswer(true)
-  }
+  const [openModalAnswer, setOpenModalAnswer] = useState(false)
+  const [modalQuestion, setModalQuestion] = useState({})
 
   useEffect(() => {
     async function loadData() {
@@ -23,8 +20,14 @@ function Home() {
 
   return (
     <Container>
-      {openModalAnswer && <ModalAnswer />}
-
+      {openModalAnswer && (
+        <ModalAnswer
+          question={modalQuestion}
+          closeModal={(close) => {
+            setOpenModalAnswer(close)
+          }}
+        />
+      )}
       <ContainerHeader>
         <Header />
         <Sidebar />
@@ -35,12 +38,32 @@ function Home() {
           <>
             <div style={{ width: '100%' }}>
               {questions.map(
-                (question, index) => index % 2 === 0 && <AllQuestions key={question.id} question={question} />
+                (question, index) =>
+                  index % 2 === 0 && (
+                    <AllQuestions
+                      openModal={(quest) => {
+                        setModalQuestion(quest)
+                        setOpenModalAnswer(true)
+                      }}
+                      key={question.id}
+                      question={question}
+                    />
+                  )
               )}
             </div>
             <div style={{ width: '100%' }}>
               {questions.map(
-                (question, index) => index % 2 !== 0 && <AllQuestions key={question.id} question={question} />
+                (question, index) =>
+                  index % 2 !== 0 && (
+                    <AllQuestions
+                      openModal={(quest) => {
+                        setModalQuestion(quest)
+                        setOpenModalAnswer(true)
+                      }}
+                      key={question.id}
+                      question={question}
+                    />
+                  )
               )}
             </div>
           </>

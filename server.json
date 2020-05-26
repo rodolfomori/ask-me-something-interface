@@ -14,25 +14,33 @@
           "id": "123",
           "text": "Eu acho que foi o Messi",
           "user": "cara22",
-          "question_id": "123"
+          "question_id": "123",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "123",
           "text": "Eu acho que foi o Messi",
           "user": "cara22",
-          "question_id": "123"
+          "question_id": "123",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "123",
           "text": "Eu acho que foi o Messi",
           "user": "cara22",
-          "question_id": "123"
+          "question_id": "123",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "123",
           "text": "Eu acho que foi o Messi",
           "user": "cara22",
-          "question_id": "123"
+          "question_id": "123",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         }
       ]
     },
@@ -50,31 +58,41 @@
           "id": "1234",
           "text": "Eu acho que foi o Star Wars",
           "user": "fulano34",
-          "question_id": "1234"
+          "question_id": "1234",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "1234",
           "text": "Eu acho que foi o Star Wars",
           "user": "fulano34",
-          "question_id": "1234"
+          "question_id": "1234",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "1234",
           "text": "Eu acho que foi o Star Wars",
           "user": "fulano34",
-          "question_id": "1234"
+          "question_id": "1234",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "1234",
           "text": "Eu acho que foi o Star Wars",
           "user": "fulano34",
-          "question_id": "1234"
+          "question_id": "1234",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         },
         {
           "id": "1234",
           "text": "Eu acho que foi o Star Wars",
           "user": "fulano34",
-          "question_id": "1234"
+          "question_id": "1234",
+          "createdAt": "2020-01-01 12:00:00",
+          "updateAt": "2020-01-01 12:00:00"
         }
       ]
     },

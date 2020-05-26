@@ -5,26 +5,26 @@ import PropTypes from 'prop-types'
 
 import { Container, Title, About, Avatar, WrapperText, WrapperIcons, ReplyLink } from './styled'
 
-function Question(quest) {
-  console.log(quest)
+function Question({ question: quest, openModal }) {
+  const setModalOpen = (question) => {
+    openModal && openModal(question)
+  }
+
   return (
     <Container>
       <WrapperText>
         <Title>
-          <Avatar src={`https://api.adorable.io/avatars/81/${quest.question.id}.png`} />
-
-          {quest.question.title}
+          <Avatar src={`https://api.adorable.io/avatars/81/${quest.id}.png`} />
+          {quest.title}
         </Title>
       </WrapperText>
       <WrapperIcons>
         <About>
           <p>
-            {quest.question.answer
-              ? `${quest.question.answer.length}  ${quest.question.answer.length > 1 ? 'Answers' : 'Answer'}`
-              : '0 Answer'}
+            {quest.answer ? `${quest.answer.length}  ${quest.answer.length > 1 ? 'Answers' : 'Answer'}` : '0 Answer'}
           </p>
         </About>
-        <ReplyLink>
+        <ReplyLink onClick={() => setModalOpen(quest)}>
           AnswerMe!
           <FaReply />
         </ReplyLink>
@@ -33,8 +33,9 @@ function Question(quest) {
   )
 }
 
-export default Question
-
 Question.propTypes = {
-  quest: PropTypes.object,
+  question: PropTypes.object,
+  openModal: PropTypes.func,
 }
+
+export default Question
