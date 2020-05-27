@@ -22,7 +22,12 @@ export const Container = styled.div`
     } */
   }
 `
-
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+`
 export const Logo = styled.img`
   border-radius: 20px;
   background: #8f9ca9;

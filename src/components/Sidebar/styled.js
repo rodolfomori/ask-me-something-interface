@@ -23,7 +23,7 @@ export const Button = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background-color: #ecf0f3;
+  background-color: ${(props) => (props.searchData ? ' #5374ff' : '#ecf0f3')};
   border: none;
   display: flex;
   justify-content: center;
@@ -31,6 +31,13 @@ export const Button = styled.button`
   svg {
     height: 35px;
     width: 35px;
-    color: #92a3af;
+    color: ${(props) => (props.searchData ? ' #ecf0f3' : '#92a3af')};
+  }
+
+  &:hover {
+    background: #5374ff;
+    svg {
+      color: white;
+    }
   }
 `
