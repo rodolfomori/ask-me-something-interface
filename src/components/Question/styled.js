@@ -53,10 +53,16 @@ export const Avatar = styled.img`
 `
 
 export const ReplyLink = styled.button`
+  background: none;
   border: none;
   display: flex;
   align-items: center;
+  transition: 0.2;
   svg {
     transform: rotateY(180deg);
+  }
+
+  &:hover {
+    color: #5374ff;
   }
 `

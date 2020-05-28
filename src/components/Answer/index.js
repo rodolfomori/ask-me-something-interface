@@ -3,10 +3,9 @@ import React from 'react'
 import { parseISO, format } from 'date-fns'
 import PropTypes from 'prop-types'
 
-import { Container, Wrapper, Avatar, AnswerText, Like, Date } from './styled'
+import { Container, Wrapper, Avatar, AnswerText, Date } from './styled'
 
 function Answer({ answer }) {
-  console.log(answer)
   return (
     <Container>
       <Wrapper>

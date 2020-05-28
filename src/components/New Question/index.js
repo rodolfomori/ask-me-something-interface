@@ -3,20 +3,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import askme from '../../assets/img/askmemore.png'
-import more from '../../assets/img/moreicon.png'
-import { Container, Button, Wrapper, Logo, MoreIcon } from './styled'
+import { Container, Wrapper, Logo } from './styled'
 
 function NewQuestion({ openModal }) {
   const setModalOpen = () => {
     openModal && openModal()
   }
   return (
-    <Container>
+    <Container onClick={setModalOpen}>
       <Wrapper>
         <Logo src={askme} />
-        <Button onClick={setModalOpen}>
-          <MoreIcon src={more} />
-        </Button>
+        <p>click me to ask</p>
       </Wrapper>
     </Container>
   )

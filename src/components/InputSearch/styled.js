@@ -4,13 +4,10 @@ import styled from 'styled-components'
 export const Container = styled.div``
 
 export const MainInput = styled.input`
-  margin-left: 20px;
-  margin-bottom: 15px;
   width: 300px;
   height: 40px;
   border-radius: 10px;
   padding: 10px;
-  font-size: 14px;
   background-color: white;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

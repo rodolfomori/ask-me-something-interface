@@ -11,7 +11,7 @@ export const Container = styled.div`
   -ms-user-select: none;
   user-select: none;
   cursor: default;
-  background: white;
+  background: inherit;
   overflow: hidden;
 
   .transitions-item {

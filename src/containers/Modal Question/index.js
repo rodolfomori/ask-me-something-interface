@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import PropTypes from 'prop-types'
 
 import { AskAnimated } from '../../components'
+import api from '../../services/api'
 import {
   SendButton,
   MyAnswer,
@@ -23,11 +24,21 @@ import {
 
 function ModalQuestion({ closeModal }) {
   const [loop, setLoop] = useState(true)
+  const [textAreaQuestion, setTextAreaQuestion] = useState('')
+
   const setModalClose = () => {
     closeModal && closeModal(false)
   }
 
-  const sendQuestion = () => {
+  const sendQuestion = async () => {
+    const response = await api.post('questions', {
+      id: new Date(),
+      title: textAreaQuestion,
+      subject: 'Sports',
+      answer: [],
+      createdAt: '2018-01-01 12:00:00',
+      updateAt: '2020-01-01 12:00:00',
+    })
     toast.success('Question successfully added!')
     setTimeout(() => {
       setModalClose()
@@ -51,7 +62,12 @@ function ModalQuestion({ closeModal }) {
         <Divider />
         <WrapperBottom></WrapperBottom>
         <MyAnswerContainer>
-          <MyAnswer placeholder="Ask Me Please!" />
+          <MyAnswer
+            onChange={(event) => {
+              setTextAreaQuestion(event.target.value)
+            }}
+            placeholder="Ask Me Please!"
+          />
           <SendButton onClick={sendQuestion}>
             Ask Now!
             <FaReply />

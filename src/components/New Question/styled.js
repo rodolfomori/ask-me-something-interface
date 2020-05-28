@@ -9,6 +9,15 @@ export const Container = styled.div`
   margin: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
   display: flex;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 10px 10px 15px rgb(255, 246, 137);
+    transition: 0.3;
+  }
+  p {
+    font-size: 20px;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -35,9 +44,4 @@ export const Button = styled.button`
 
 export const Logo = styled.img`
   width: 100%;
-`
-
-export const MoreIcon = styled.img`
-  width: 100%;
-  color: #5374ff;
 `

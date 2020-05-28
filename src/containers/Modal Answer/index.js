@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 import PropTypes from 'prop-types'
 
 import { Answer } from '../../components'
+import api from '../../services/api'
 import {
   SendButton,
   MyAnswer,
@@ -22,15 +23,24 @@ import {
 
 function ModalAnswer({ closeModal, question: quest }) {
   const [question, setQuestion] = useState(quest)
+  const [textAreaAnswer, setTextAreaAnswer] = useState('')
 
-  const sendAnswer = () => {
+  const sendAnswer = async () => {
+    const response = await api.post('questions', {
+      id: new Date(),
+      title: textAreaAnswer,
+      subject: 'Sports',
+      answer: [],
+      createdAt: '2018-01-01 12:00:00',
+      updateAt: '2020-01-01 12:00:00',
+    })
+
     toast.success('Thank you for your answer')
     setTimeout(() => {
       setModalClose()
     }, 3000)
   }
 
-  console.log(question)
   const setModalClose = () => {
     closeModal && closeModal(false)
   }
@@ -57,8 +67,13 @@ function ModalAnswer({ closeModal, question: quest }) {
           <h3>{question.answer ? question.answer.length + ' Answers' : '0 Answer'}</h3>
         </WrapperBottom>
         <MyAnswerContainer>
-          <MyAnswer placeholder="Answer Me Please!" onClick={sendAnswer} />
-          <SendButton>
+          <MyAnswer
+            onChange={(event) => {
+              setTextAreaAnswer(event.target.value)
+            }}
+            placeholder="Answer Me Please!"
+          />
+          <SendButton onClick={sendAnswer}>
             Answer!
             <FaReply />
           </SendButton>

@@ -27,6 +27,7 @@ export const Button = styled.button`
   border: none;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   svg {
     height: 35px;
