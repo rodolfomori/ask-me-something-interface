@@ -17,7 +17,7 @@ function Header() {
     <Container>
       <Logo src={askMe} />
       <Wrapper style={{ display: 'flex' }}>
-        {/* {loop && <Animations />} */}
+        <Animations />
         {/* <LogoText src={text} /> */}
       </Wrapper>
     </Container>

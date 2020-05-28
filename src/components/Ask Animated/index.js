@@ -26,6 +26,7 @@ function AskAnimated() {
     ref.current.push(setTimeout(() => set(['What?', 'When?', 'Why?']), 2000))
     ref.current.push(setTimeout(() => set(['What?', 'Why?']), 5000))
     ref.current.push(setTimeout(() => set(['What?', 'Realy?', 'Why?']), 8000))
+    setTimeout(() => reset(), 16000)
   }, [])
 
   useEffect(() => reset(), [])
