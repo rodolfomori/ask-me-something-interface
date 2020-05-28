@@ -16,10 +16,7 @@ function Header() {
   return (
     <Container>
       <Logo src={askMe} />
-      <Wrapper style={{ display: 'flex' }}>
-        {/* <Animations /> */}
-        {/* <LogoText src={text} /> */}
-      </Wrapper>
+      <Wrapper style={{ display: 'flex' }}>{/* <Animations /> */}</Wrapper>
     </Container>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { FaReply } from 'react-icons/fa'
 import { RiArrowGoBackLine } from 'react-icons/ri'
 import { toast } from 'react-toastify'
@@ -17,7 +17,6 @@ import {
   Divider,
   WrapperBottom,
   WrapperTop,
-  Like,
   Back,
 } from './styled'
 
@@ -59,9 +58,7 @@ function ModalAnswer({ closeModal, question: quest }) {
             <RiArrowGoBackLine /> <p>Back Home</p>
           </Back>
           <div style={{ display: 'flex' }}>
-            <h3>Sports</h3>
-            <Like />
-            <p>24</p>
+            <h3>{question.subject}</h3>
           </div>
         </Header>
 

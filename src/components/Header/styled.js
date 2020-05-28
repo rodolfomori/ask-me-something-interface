@@ -3,38 +3,36 @@ import styled from 'styled-components'
 export const Container = styled.div`
   padding: 10px;
   background: white;
-  height: 327px;
   border-radius: 20px;
   margin: 50px;
   margin-left: 20px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
   display: flex;
   margin-right: 0;
+  max-width: 90%;
 
   h1 {
     padding: 5px;
     text-align: -webkit-auto;
   }
 
-  p {
-    /* @media (min-width: 960px) {
-      display: none;
-    } */
+  @media (max-width: 600px) {
+    width: fit-content;
+    margin: 20px;
   }
 `
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 `
 export const Logo = styled.img`
   border-radius: 20px;
   background: #8f9ca9;
   max-height: 307px;
-`
-
-export const LogoText = styled.img`
-  height: 300px;
-  margin-left: 15px;
+  max-width: 100%;
 `

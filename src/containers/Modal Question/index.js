@@ -17,24 +17,33 @@ import {
   Divider,
   WrapperBottom,
   WrapperTop,
-  Like,
   Back,
   QuestionComponent,
+  SelectSubject,
 } from './styled'
 
 function ModalQuestion({ closeModal }) {
-  const [loop, setLoop] = useState(true)
   const [textAreaQuestion, setTextAreaQuestion] = useState('')
+  const [selectedSubject, setSelectedSubject] = useState(null)
 
+  console.log(selectedSubject)
   const setModalClose = () => {
     closeModal && closeModal(false)
   }
+
+  const subject = [
+    { id: 1, type: 'Everything' },
+    { id: 2, type: 'Sports' },
+    { id: 3, type: 'Games' },
+    { id: 4, type: 'Entertainment' },
+    { id: 5, type: 'Finances' },
+  ]
 
   const sendQuestion = async () => {
     const response = await api.post('question', {
       // id: new Date(),
       title: textAreaQuestion,
-      subject: 'Sports',
+      subject: selectedSubject.type,
       // answer: [],
       // createdAt: '2018-01-01 12:00:00',
       // updateAt: '2020-01-01 12:00:00',
@@ -45,10 +54,6 @@ function ModalQuestion({ closeModal }) {
     }, 3000)
   }
 
-  setInterval(() => {
-    setLoop(false)
-    setLoop(true)
-  }, 12000)
   return (
     <>
       <QuestionComponent>
@@ -68,12 +73,21 @@ function ModalQuestion({ closeModal }) {
             }}
             placeholder="Ask Me Please!"
           />
-          <SendButton onClick={sendQuestion}>
+          <SendButton disabled={!selectedSubject || !textAreaQuestion} onClick={sendQuestion}>
             Ask Now!
             <FaReply />
           </SendButton>
         </MyAnswerContainer>
-        {loop && <AskAnimated />}
+        <SelectSubject
+          placeholder="Subject..."
+          key={(sub) => sub.id}
+          name="subject"
+          options={subject}
+          onChange={setSelectedSubject}
+          getOptionValue={(sub) => sub.type}
+          getOptionLabel={(sub) => sub.type}
+        />
+        {/* {loop && <AskAnimated />} */}
       </QuestionComponent>
       <BackBlur onClick={setModalClose}></BackBlur>
     </>

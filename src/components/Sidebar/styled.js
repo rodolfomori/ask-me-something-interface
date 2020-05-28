@@ -3,11 +3,18 @@ import styled from 'styled-components'
 export const Container = styled.div`
   padding: 10px;
   background: white;
-  height: 100%;
+  max-height: 327px;
+  max-width: 200px;
   border-radius: 20px;
   margin: 50px 0;
   margin-right: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
+
+  @media (max-width: 600px) {
+    margin: 20px;
+    max-width: 99%;
+    display: flex;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -16,6 +23,9 @@ export const Wrapper = styled.div`
   align-items: center;
   p {
     margin-left: 10px;
+  }
+  @media (max-width: 600px) {
+    margin: 5px;
   }
 `
 

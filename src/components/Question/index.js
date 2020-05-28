@@ -11,7 +11,7 @@ function Question({ question: quest, openModal }) {
   }
 
   return (
-    <Container>
+    <Container onClick={() => setModalOpen(quest)}>
       <WrapperText>
         <Title>
           <Avatar src={`https://api.adorable.io/avatars/81/${quest.id}.png`} />

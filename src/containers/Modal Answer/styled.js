@@ -44,6 +44,12 @@ export const AnswersComponent = styled.div`
     background-color: #5374ff;
     border-radius: 10px;
   }
+
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
 `
 
 export const Back = styled.div`

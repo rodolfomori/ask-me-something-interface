@@ -4,6 +4,7 @@ import starwars from '../../assets/img/starwars.gif'
 import { Header, Sidebar, NewQuestion, InputSearch } from '../../components'
 import { useSearch } from '../../hooks/search'
 import api from '../../services/api'
+import isMobile from '../../utils/isMobile'
 import ModalAnswer from '../Modal Answer'
 import ModalQuestion from '../Modal Question'
 import {
@@ -19,6 +20,7 @@ import {
 
 function Home() {
   const { searchGeneralData, searchData } = useSearch()
+  const mobile = isMobile.any()
 
   const [questions, setQuestions] = useState(null)
   const [tempQuestions, setTempQuestions] = useState(null)
@@ -90,11 +92,16 @@ function Home() {
       )}
       <ContainerHeader>
         <Header />
-        <NewQuestion
-          openModal={() => {
-            setOpenModalQuestion(true)
-          }}
-        />
+
+        {mobile ? (
+          <AddQuestion onClick={() => setOpenModalQuestion(true)}>Add your question!</AddQuestion>
+        ) : (
+          <NewQuestion
+            openModal={() => {
+              setOpenModalQuestion(true)
+            }}
+          />
+        )}
         <Sidebar />
       </ContainerHeader>
       <Wrapper>
@@ -105,43 +112,58 @@ function Home() {
       </Wrapper>
 
       {questions && questions.length > 0 ? (
-        <ContainerQuestions>
-          <div style={{ width: '100%' }}>
-            {questions.map(
-              (question, index) =>
-                index % 2 === 0 && (
-                  <AllQuestions
-                    openModal={(quest) => {
-                      setModalQuestion(quest)
-                      setOpenModalAnswer(true)
-                    }}
-                    key={question.id}
-                    question={question}
-                  />
-                )
-            )}
-          </div>
-          <div style={{ width: '100%' }}>
-            {questions.map(
-              (question, index) =>
-                index % 2 !== 0 && (
-                  <AllQuestions
-                    openModal={(quest) => {
-                      setModalQuestion(quest)
-                      setOpenModalAnswer(true)
-                    }}
-                    key={question.id}
-                    question={question}
-                  />
-                )
-            )}
-          </div>
-        </ContainerQuestions>
+        mobile ? (
+          <>
+            {questions.map((question, index) => (
+              <AllQuestions
+                openModal={(quest) => {
+                  setModalQuestion(quest)
+                  setOpenModalAnswer(true)
+                }}
+                key={question.id}
+                question={question}
+              />
+            ))}
+          </>
+        ) : (
+          <ContainerQuestions>
+            <div style={{ width: '100%' }}>
+              {questions.map(
+                (question, index) =>
+                  index % 2 === 0 && (
+                    <AllQuestions
+                      openModal={(quest) => {
+                        setModalQuestion(quest)
+                        setOpenModalAnswer(true)
+                      }}
+                      key={question.id}
+                      question={question}
+                    />
+                  )
+              )}
+            </div>
+            <div style={{ width: '100%' }}>
+              {questions.map(
+                (question, index) =>
+                  index % 2 !== 0 && (
+                    <AllQuestions
+                      openModal={(quest) => {
+                        setModalQuestion(quest)
+                        setOpenModalAnswer(true)
+                      }}
+                      key={question.id}
+                      question={question}
+                    />
+                  )
+              )}
+            </div>
+          </ContainerQuestions>
+        )
       ) : (
         <WrapperNoQuestion>
           <p>Any question here ?</p>
           <img src={starwars} />
-          <AddQuestion onClick={() => setOpenModalQuestion(true)}>Add your question!</AddQuestion>
+          {!mobile && <AddQuestion onClick={() => setOpenModalQuestion(true)}>Add your question!</AddQuestion>}
         </WrapperNoQuestion>
       )}
     </Container>

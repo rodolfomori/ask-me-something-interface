@@ -1,4 +1,4 @@
-import { FaHeart } from 'react-icons/fa'
+import Select from 'react-select'
 
 import { shade } from 'polished'
 import styled from 'styled-components'
@@ -44,6 +44,19 @@ export const QuestionComponent = styled.div`
     background-color: #5374ff;
     border-radius: 10px;
   }
+
+  @media (max-width: 600px) {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+`
+
+export const SelectSubject = styled(Select)`
+  color: black;
+  cursor: pointer !important;
+  width: 100%;
+  margin-top: 20px;
 `
 
 export const Back = styled.div`
@@ -88,29 +101,24 @@ export const WrapperBottom = styled.div`
   }
 `
 
-export const Like = styled(FaHeart)`
-  width: 30px;
-  height: 30px;
-  margin-left: 30px;
-  margin-right: 10px;
-`
-
 export const MyAnswerContainer = styled.div`
   display: flex;
   align-items: center;
 `
 
 export const SendButton = styled.button`
+  cursor: ${(props) => (props.disabled ? 'auto' : 'pointer')};
   padding: 7px;
   height: 80px;
   border: none;
   border-radius: 10px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background: #5374ff;
   margin: 0;
   color: white;
+  font-family: 'Roboto';
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.145733);
+  background-color: ${(props) => (props.disabled ? 'lightgray' : '#5374ff')};
 
   svg {
     height: 25px;
@@ -118,7 +126,7 @@ export const SendButton = styled.button`
   }
 
   &:hover {
-    background: ${shade('0.1', '#5374ff')};
+    background: ${(props) => (props.disabled ? 'lightgray' : shade('0.1', '#5374ff'))};
     transition: 0.3;
   }
 `

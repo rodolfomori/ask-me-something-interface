@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.div`
   padding: 10px;
   background: white;
-  height: 327px;
-  width: 200px;
+  max-height: 327px;
+  max-width: 200px;
   border-radius: 20px;
   margin: 50px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
@@ -27,6 +27,7 @@ export const Wrapper = styled.div`
   p {
     margin-left: 10px;
     text-align: center;
+    margin-top: 20px;
   }
   justify-content: space-between;
   flex-direction: column;

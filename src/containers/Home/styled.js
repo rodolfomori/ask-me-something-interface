@@ -6,19 +6,26 @@ import { Question } from '../../components'
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 export const ContainerHeader = styled.div`
   /* color: ${(props) => props.theme.palette.primary.main}; */
   display: flex;
   justify-content: space-between;
+  display: flex;
 
-`
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  `
 
 export const ContainerQuestions = styled.div`
-  /* column-count: 2;
-  -webkit-column-gap: 1em;
-  -moz-column-gap: 1em;
-  column-gap: 1em; */
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -27,23 +34,15 @@ export const ContainerQuestions = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-
   margin: 20px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `
 
-export const AllQuestions = styled(Question)`
-  /* background-color: Gainsboro;
-  color: white;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-  margin: 1rem 0 1rem 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-`
+export const AllQuestions = styled(Question)``
+
 export const UnansweredButton = styled.button`
   margin-left: 33px;
   padding: 7px;
@@ -63,12 +62,18 @@ export const UnansweredButton = styled.button`
     transition: 0.3;
   }
   background-color: ${(props) => (props.justUnanswered ? ' #5374ff' : 'white')};
+
+  @media (max-width: 600px) {
+    margin: 0;
+    margin-top: 20px;
+  }
 `
 
 export const WrapperNoQuestion = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  margin-bottom: 50px;
   align-items: center;
   p {
     text-align: center;
@@ -79,10 +84,10 @@ export const WrapperNoQuestion = styled.div`
   img {
     width: max-content;
     border-radius: 20px;
+    max-width: 80%;
   }
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
 `
 export const AddQuestion = styled.button`
   margin-top: 25px;
