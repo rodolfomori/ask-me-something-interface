@@ -28,7 +28,7 @@ function Home() {
   const [justUnanswered, setJustUnanswered] = useState(false)
 
   const loadData = async () => {
-    const response = await api.get('questions')
+    const response = await api.get('question')
     setQuestions(response.data)
     setTempQuestions(response.data)
   }
@@ -55,7 +55,7 @@ function Home() {
 
   const setJustUnansweredQuestion = () => {
     if (!justUnanswered) {
-      const justUnansweredQuestions = questions.filter((quest) => quest.answer.length < 1)
+      const justUnansweredQuestions = questions.filter((quest) => quest.answers.length < 1)
       setQuestions(justUnansweredQuestions)
     } else {
       if (searchData && searchData !== 'Everything') {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { FaReply } from 'react-icons/fa'
 import { RiArrowGoBackLine } from 'react-icons/ri'
 import { toast } from 'react-toastify'
@@ -26,19 +26,25 @@ function ModalAnswer({ closeModal, question: quest }) {
   const [textAreaAnswer, setTextAreaAnswer] = useState('')
 
   const sendAnswer = async () => {
-    const response = await api.post('questions', {
-      id: new Date(),
-      title: textAreaAnswer,
-      subject: 'Sports',
-      answer: [],
-      createdAt: '2018-01-01 12:00:00',
-      updateAt: '2020-01-01 12:00:00',
-    })
+    try {
+      const response = await api.post('answer', {
+        // id: new Date(),
+        question_id: question.id,
+        text: textAreaAnswer,
+        // answer: [],
+        // createdAt: '2018-01-01 12:00:00',
+        // updateAt: '2020-01-01 12:00:00',
+      })
+      toast.success('Thank you for your answer')
 
-    toast.success('Thank you for your answer')
-    setTimeout(() => {
-      setModalClose()
-    }, 3000)
+      const newQUestion = question
+      newQUestion.answers.push(response.data)
+      setQuestion(newQUestion)
+      setTextAreaAnswer('')
+    } catch (err) {
+      toast.error('Ohh no, we had a problem. Try again please!')
+      console.error(err)
+    }
   }
 
   const setModalClose = () => {
@@ -64,10 +70,11 @@ function ModalAnswer({ closeModal, question: quest }) {
         </WrapperTop>
         <Divider />
         <WrapperBottom>
-          <h3>{question.answer ? question.answer.length + ' Answers' : '0 Answer'}</h3>
+          <h3>{question.answers ? question.answers.length + ' Answers' : '0 Answer'}</h3>
         </WrapperBottom>
         <MyAnswerContainer>
           <MyAnswer
+            value={textAreaAnswer}
             onChange={(event) => {
               setTextAreaAnswer(event.target.value)
             }}
@@ -78,7 +85,7 @@ function ModalAnswer({ closeModal, question: quest }) {
             <FaReply />
           </SendButton>
         </MyAnswerContainer>
-        {question.answer && question.answer.map((answer) => <Answer key={answer.id} answer={answer} />)}
+        {question.answers && question.answers.map((answer) => <Answer key={answer.id} answer={answer} />)}
       </AnswersComponent>
       <BackBlur onClick={setModalClose}></BackBlur>
     </>

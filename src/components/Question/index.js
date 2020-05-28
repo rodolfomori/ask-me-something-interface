@@ -21,7 +21,7 @@ function Question({ question: quest, openModal }) {
       <WrapperIcons>
         <About>
           <p>
-            {quest.answer ? `${quest.answer.length}  ${quest.answer.length > 1 ? 'Answers' : 'Answer'}` : '0 Answer'}
+            {quest.answers ? `${quest.answers.length}  ${quest.answers.length > 1 ? 'Answers' : 'Answer'}` : '0 Answer'}
           </p>
         </About>
         <ReplyLink onClick={() => setModalOpen(quest)}>
