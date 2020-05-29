@@ -11,7 +11,6 @@ function Answer({ answer }) {
       <Wrapper>
         <Avatar src={`https://api.adorable.io/avatars/81/${answer.id}.png`} />
         <AnswerText>{answer.text}</AnswerText>
-        {/* <Like></Like> */}
       </Wrapper>
       <Date>{format(parseISO(answer.createdAt), "EEEE dd MMM yyyy H':'mm")}</Date>
     </Container>

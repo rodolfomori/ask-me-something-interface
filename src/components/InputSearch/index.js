@@ -16,7 +16,6 @@ function InputSearch() {
   }, [searchGeneralData])
 
   const inputRef = useRef(null)
-  console.log(searchGeneralData)
   return (
     <Container>
       <MainInput placeholder="search for ..." ref={inputRef} />

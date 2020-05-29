@@ -1,17 +1,12 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import { ThemeProvider } from 'styled-components'
-
-import { Home } from './containers'
-import defaultTheme from './styles/theme'
+import Home from './containers/Home'
 
 export default function Routes() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Switch>
-        <Route exact path="/" component={Home} />\
-      </Switch>
-    </ThemeProvider>
+    <Switch>
+      <Route exact path="/" component={Home} />\
+    </Switch>
   )
 }

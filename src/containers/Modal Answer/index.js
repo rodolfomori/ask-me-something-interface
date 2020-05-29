@@ -27,12 +27,8 @@ function ModalAnswer({ closeModal, question: quest }) {
   const sendAnswer = async () => {
     try {
       const response = await api.post('answer', {
-        // id: new Date(),
         question_id: question.id,
         text: textAreaAnswer,
-        // answer: [],
-        // createdAt: '2018-01-01 12:00:00',
-        // updateAt: '2020-01-01 12:00:00',
       })
       toast.success('Thank you for your answer')
 

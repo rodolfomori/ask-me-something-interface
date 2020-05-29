@@ -13,7 +13,6 @@ export const Container = styled.div`
   }
 `
 export const ContainerHeader = styled.div`
-  /* color: ${(props) => props.theme.palette.primary.main}; */
   display: flex;
   justify-content: space-between;
   display: flex;
@@ -21,9 +20,9 @@ export const ContainerHeader = styled.div`
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
   }
-  `
+`
 
 export const ContainerQuestions = styled.div`
   display: flex;

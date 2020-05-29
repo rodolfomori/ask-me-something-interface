@@ -30,9 +30,13 @@ function Home() {
   const [justUnanswered, setJustUnanswered] = useState(false)
 
   const loadData = async () => {
-    const response = await api.get('question')
-    setQuestions(response.data)
-    setTempQuestions(response.data)
+    try {
+      const response = await api.get('question')
+      setQuestions(response.data)
+      setTempQuestions(response.data)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   useEffect(() => {

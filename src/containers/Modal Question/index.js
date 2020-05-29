@@ -12,7 +12,6 @@ import {
   MyAnswer,
   MyAnswerContainer,
   BackBlur,
-  AnswersComponent,
   Header,
   Divider,
   WrapperBottom,
@@ -39,18 +38,18 @@ function ModalQuestion({ closeModal }) {
   ]
 
   const sendQuestion = async () => {
-    const response = await api.post('question', {
-      // id: new Date(),
-      title: textAreaQuestion,
-      subject: selectedSubject.type,
-      // answer: [],
-      // createdAt: '2018-01-01 12:00:00',
-      // updateAt: '2020-01-01 12:00:00',
-    })
-    toast.success('Question successfully added!')
-    setTimeout(() => {
-      setModalClose()
-    }, 3000)
+    try {
+      await api.post('question', {
+        title: textAreaQuestion,
+        subject: selectedSubject.type,
+      })
+      toast.success('Question successfully added!')
+      setTimeout(() => {
+        setModalClose()
+      }, 3000)
+    } catch (err) {
+      toast.error('Ohhh, we could not add your question, try again!')
+    }
   }
 
   return (
@@ -86,7 +85,7 @@ function ModalQuestion({ closeModal }) {
           getOptionValue={(sub) => sub.type}
           getOptionLabel={(sub) => sub.type}
         />
-        {/* {loop && <AskAnimated />} */}
+        <AskAnimated style={{ margin: '20px' }} />
       </QuestionComponent>
       <BackBlur onClick={setModalClose}></BackBlur>
     </>

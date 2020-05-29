@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaReply, FaHeart } from 'react-icons/fa'
+import { FaReply } from 'react-icons/fa'
 
 import PropTypes from 'prop-types'
 

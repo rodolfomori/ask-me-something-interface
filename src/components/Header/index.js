@@ -1,22 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import askMe from '../../assets/img/askMeLogo.png'
-import text from '../../assets/img/text.png'
+import isMobile from '../../utils/isMobile'
 import Animations from '../Ask Animated'
 import { Container, Logo, Wrapper } from './styled'
 
 function Header() {
-  const [loop, setLoop] = useState(true)
-
-  setInterval(() => {
-    setLoop(false)
-    setLoop(true)
-  }, 12000)
-
+  const mobile = isMobile.any()
   return (
     <Container>
       <Logo src={askMe} />
-      <Wrapper style={{ display: 'flex' }}>{/* <Animations /> */}</Wrapper>
+      <Wrapper>{!mobile && <Animations style={{ width: '280px' }} />}</Wrapper>
     </Container>
   )
 }

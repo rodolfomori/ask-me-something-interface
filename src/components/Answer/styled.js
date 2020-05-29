@@ -1,5 +1,3 @@
-import { FaHeart } from 'react-icons/fa'
-
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -22,12 +20,6 @@ export const Avatar = styled.img`
 `
 
 export const AnswerText = styled.div``
-
-export const Like = styled(FaHeart)`
-  width: 50px;
-  height: 50px;
-  margin-left: 30px;
-`
 
 export const Date = styled.p`
   margin-left: 15px;
