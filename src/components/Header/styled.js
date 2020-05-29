@@ -9,6 +9,7 @@ export const Container = styled.div`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.145733);
   display: flex;
   margin-right: 0;
+  min-height: 264px;
 
   h1 {
     padding: 5px;
