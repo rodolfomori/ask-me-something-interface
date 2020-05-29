@@ -5,7 +5,6 @@ import { toast } from 'react-toastify'
 
 import PropTypes from 'prop-types'
 
-import { AskAnimated } from '../../components'
 import api from '../../services/api'
 import {
   SendButton,
@@ -85,7 +84,6 @@ function ModalQuestion({ closeModal }) {
           getOptionValue={(sub) => sub.type}
           getOptionLabel={(sub) => sub.type}
         />
-        <AskAnimated style={{ margin: '20px' }} />
       </QuestionComponent>
       <BackBlur onClick={setModalClose}></BackBlur>
     </>
