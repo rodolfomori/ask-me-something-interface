@@ -77,6 +77,9 @@ export const Back = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    margin-top: 50px;
+  }
 `
 
 export const WrapperTop = styled.div`
