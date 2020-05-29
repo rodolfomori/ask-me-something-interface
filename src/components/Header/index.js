@@ -6,7 +6,7 @@ import Animations from '../Ask Animated'
 import { Container, Logo, Wrapper } from './styled'
 
 function Header() {
-  const mobile = isMobile.any()
+  const mobile = isMobile.smallPC()
   return (
     <Container>
       <Logo src={askMe} />
