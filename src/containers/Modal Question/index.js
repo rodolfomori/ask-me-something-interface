@@ -26,7 +26,6 @@ function ModalQuestion({ closeModal }) {
   const [textAreaQuestion, setTextAreaQuestion] = useState('')
   const [selectedSubject, setSelectedSubject] = useState(null)
 
-  console.log(selectedSubject)
   const setModalClose = () => {
     closeModal && closeModal(false)
   }
