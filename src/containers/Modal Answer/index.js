@@ -32,10 +32,8 @@ function ModalAnswer({ closeModal, question: quest }) {
       })
       toast.success('Thank you for your answer')
 
-      console.log(response.data)
-
       const newQUestion = question
-      // newQUestion.answers.push(response.data)
+      newQUestion.answers.push(response.data)
       setQuestion(newQUestion)
       setTextAreaAnswer('')
     } catch (err) {
