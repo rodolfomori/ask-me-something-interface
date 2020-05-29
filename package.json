@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "date-fns": "^2.14.0",
+    "jest": "^26.0.1",
     "json-server": "^0.16.1",
     "polished": "^3.6.3",
     "prop-types": "^15.7.2",
@@ -22,13 +23,15 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "jest": {
+    "testMatch": [
+      "**/__test__/**/*.test.js"
+    ]
   },
   "browserslist": {
     "production": [
@@ -54,6 +57,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.2",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "react-app-rewired": "^2.1.6"
   }
 }
